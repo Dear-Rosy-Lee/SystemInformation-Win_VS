@@ -10,8 +10,8 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.3380
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: “=”: 从“wchar_t”转换到“char”，可能丢失数据
     正在创建库 D:\Users\Administrator\source\repos\LibSystemInfo\x64\Release\LibSystemInfo.lib 和对象 D:\Users\Administrator\source\repos\LibSystemInfo\x64\Release\LibSystemInfo.exp
   正在生成代码
-  1134 of 1534 functions (73.9%) were compiled, the rest were copied from previous compilation.
-    165 functions were new in current compilation
-    83 functions had inline decision re-evaluated but remain unchanged
+  29 of 1520 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
+    57 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   LibSystemInfo.vcxproj -> D:\Users\Administrator\source\repos\LibSystemInfo\x64\Release\LibSystemInfo.dll

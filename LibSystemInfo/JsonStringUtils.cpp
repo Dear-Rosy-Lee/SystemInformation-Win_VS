@@ -74,15 +74,16 @@ char* Sting2Chars(const std::string& str)
 }
 // 将 Base64 数据写入 .env 文件
 void WriteToEnvFile(const std::string& base64String) {
-    std::ofstream envFile(".env", std::ios::app);
+    std::ofstream envFile(".env", std::ios::app); // Append mode
     if (envFile.is_open()) {
-        envFile << "HARDWARE_INFO=" << base64String << std::endl;
+        envFile << base64String << std::endl; // 直接写入 base64 字符串
         envFile.close();
     }
     else {
         std::cerr << "Unable to open .env file for writing." << std::endl;
     }
 }
+
 // 将 JSON 数据写入可执行程序所在目录下的文件
 void WriteJsonToExecutableDir(const nlohmann::json& jsonData) {
     // 获取当前工作目录
@@ -127,6 +128,21 @@ void WriteJsonToExecutableDir(const nlohmann::json& jsonData) {
     }
 #endif    
 }
+
+// 从 .env 文件读取 Base64 编码的信息
+std::string ReadBase64FromEnv(const std::string& envFilePath) {
+    std::ifstream envFile(envFilePath);
+    std::string base64String;
+    if (envFile.is_open()) {
+        std::getline(envFile, base64String); // 假设 base64 内容在第一行
+        envFile.close();
+    }
+    else {
+        std::cerr << "Unable to open .env file for reading." << std::endl;
+    }
+    return base64String;
+}
+
 // 解析.env文件并返回一个包含所有变量的map
 std::map<std::string, std::string> ParseEnvFile(const std::string& envFilePath) {
     std::cout << "Parsed ENV Variablesfunction:" << std::endl;

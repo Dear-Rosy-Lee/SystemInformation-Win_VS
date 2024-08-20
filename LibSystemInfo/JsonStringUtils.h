@@ -21,3 +21,4 @@ nlohmann::json CleanJson(nlohmann::json jsonObj);
 void WriteToEnvFile(const std::string& base64String);
 void WriteJsonToExecutableDir(const nlohmann::json& jsonData);
 std::map<std::string, std::string> ParseEnvFile(const std::string& envFilePath);
+std::string ReadBase64FromEnv(const std::string& envFilePath);

@@ -624,8 +624,9 @@ LIBSYSTEMINFO_API void WriteSystemInfoToEnv(WindowsDeviceInfo* instance) {
 }
 
 LIBSYSTEMINFO_API char* ReadBase64SystemInfoFromEnv() {
-    std::map<std::string, std::string> envVars = ParseEnvFile(".env");
-    std::string json_str= envVars["HARDWARE_INFO"];
+    //std::map<std::string, std::string> envVars = ParseEnvFile(".env");
+    //std::string json_str= envVars["HARDWARE_INFO"];
+    std::string json_str = ReadBase64FromEnv(".env");
     return Sting2Chars(json_str);
     //char* c_str = (char*)malloc(json_str.size() + 1);  // 分配内存
     //std::copy(json_str.begin(), json_str.end(), c_str);  // 复制数据
